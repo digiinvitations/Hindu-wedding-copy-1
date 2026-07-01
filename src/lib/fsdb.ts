@@ -67,6 +67,24 @@ export function transformGoogleDriveUrl(url: string): string {
 }
 
 export async function uploadToFsdb(base64: string): Promise<string> {
+  try {
+    const response = await fetch("/api/upload", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ base64 })
+    });
+    if (response.ok) {
+      const data = await response.json();
+      if (data.success && data.url) {
+        return data.url;
+      }
+    }
+  } catch (err) {
+    console.error("Failed to upload file to backend server, falling back to local storage:", err);
+  }
+
   // If it's small enough, just return the base64 directly to save writes
   if (base64.length < DIRECT_RETURN_THRESHOLD) {
     return base64;

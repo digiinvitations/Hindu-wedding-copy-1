@@ -35,7 +35,7 @@ import { FallingFlowers } from "./components/FallingFlowers";
 import { SectionSeparator } from "./components/SectionSeparator";
 import confetti from "canvas-confetti";
 
-import { saveConfigToDb, addRsvpToDb } from "./lib/supabase";
+import { saveConfigToDb, addRsvpToDb, fetchConfigFromDb } from "./lib/supabase";
 
 const TurbanIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
@@ -77,6 +77,22 @@ export default function App() {
     }
     return defaultWeddingConfig;
   });
+
+  useEffect(() => {
+    // 1. Fetch permanent config from backend server on mount
+    fetchConfigFromDb().then((serverConfig) => {
+      if (serverConfig) {
+        setConfig({
+          ...defaultWeddingConfig,
+          ...serverConfig,
+          events: serverConfig.events || defaultWeddingConfig.events,
+          galleryImages: serverConfig.galleryImages || defaultWeddingConfig.galleryImages,
+          groom: { ...defaultWeddingConfig.groom, ...(serverConfig.groom || {}) },
+          bride: { ...defaultWeddingConfig.bride, ...(serverConfig.bride || {}) },
+        });
+      }
+    });
+  }, []);
 
   useEffect(() => {
     // Synchronize configuration changes across instances/tabs
@@ -129,8 +145,7 @@ export default function App() {
   const handleConfigChange = async (newConfig: WeddingConfig) => {
     setConfig(newConfig);
     try {
-      localStorage.setItem("wedding_config", JSON.stringify(newConfig));
-      window.dispatchEvent(new Event("wedding_config_updated"));
+      await saveConfigToDb(newConfig);
     } catch (e) {
       console.error("Failed to save config.", e);
       alert("Failed to save changes: " + (e instanceof Error ? e.message : String(e)));

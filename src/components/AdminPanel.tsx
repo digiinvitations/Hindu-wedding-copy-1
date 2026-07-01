@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Users, Check, X, FileSpreadsheet, Trash2, Key, ChevronDown, ChevronUp, Image as ImageIcon, Calendar, Edit3, Settings, Video, Database, Copy, AlertCircle, CheckCircle2 } from "lucide-react";
 import { WeddingConfig, WeddingEvent } from "../weddingConfig";
 import { uploadToFsdb } from "../lib/fsdb";
-import { deleteLocalRsvp, clearAllLocalRsvps } from "../lib/supabase";
+import { deleteLocalRsvp, clearAllLocalRsvps, fetchRsvpsFromDb } from "../lib/supabase";
 import { FirestoreImage } from "./FirestoreImage";
 
 interface RSVPRecord {
@@ -70,20 +70,27 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose, config,
         }
       };
 
+      // Load locally immediately for fast initial rendering
       fetchLocalRSVPs();
+
+      // Fetch from the server-side permanent storage
+      fetchRsvpsFromDb();
 
       const handleRSVPUpdate = () => {
         fetchLocalRSVPs();
       };
 
-      window.addEventListener("storage", (e) => {
+      const handleStorageChange = (e: StorageEvent) => {
         if (e.key === "wedding_rsvps") {
           fetchLocalRSVPs();
         }
-      });
+      };
+
+      window.addEventListener("storage", handleStorageChange);
       window.addEventListener("storage_rsvps_updated", handleRSVPUpdate);
 
       return () => {
+        window.removeEventListener("storage", handleStorageChange);
         window.removeEventListener("storage_rsvps_updated", handleRSVPUpdate);
       };
     }
