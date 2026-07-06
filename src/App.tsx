@@ -922,7 +922,7 @@ export default function App() {
                 <iframe
                   className="absolute inset-0 w-full h-full"
                   src={config.youtubeEmbedUrl}
-                  title="Wedding Cinematic Teaser"
+                  title="Engagement Cinematic Teaser"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -949,7 +949,7 @@ export default function App() {
               The Celebration Schedule
             </span>
             <h2 className="font-display text-3xl md:text-4xl text-red-700 tracking-wide mt-1 uppercase font-bold">
-              Wedding Ceremonies
+              Engagement Ceremonies
             </h2>
             <div className="w-12 h-0.5 bg-gold-600/40 mx-auto mt-3" />
           </div>
@@ -1103,7 +1103,7 @@ export default function App() {
           </div>
 
           {/* Vanish transition photo gallery */}
-          <div className="relative w-full h-[320px] sm:h-[420px] md:h-[520px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl border border-gold-500/20 group bg-neutral-950 flex items-center justify-center">
+          <div className="relative w-full rounded-3xl overflow-hidden shadow-2xl border border-gold-500/20 group bg-neutral-950 flex items-center justify-center transition-all duration-500">
              {config.galleryImages.length > 0 && (
                 <AnimatePresence mode="wait">
                    <motion.div
@@ -1112,10 +1112,10 @@ export default function App() {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.8, ease: "easeInOut" }}
-                      className="relative w-full h-full cursor-pointer flex flex-col items-center justify-center"
+                      className="relative w-full cursor-pointer flex flex-col items-center justify-center"
                       onClick={() => setActivePhoto(config.galleryImages[currentGalleryIndex].url)}
                    >
-                       <FirestoreImage src={config.galleryImages[currentGalleryIndex].url} alt={config.galleryImages[currentGalleryIndex].caption} className="w-full h-full object-cover" />
+                       <FirestoreImage src={config.galleryImages[currentGalleryIndex].url} alt={config.galleryImages[currentGalleryIndex].caption} className="w-full h-auto max-h-[85vh] object-contain" />
                        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90 pointer-events-none" />
                        <div className="absolute bottom-6 left-6 z-10 pointer-events-none">
                            <span className="font-display text-white text-xl md:text-2xl tracking-wider drop-shadow-md font-bold">

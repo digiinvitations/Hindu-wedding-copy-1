@@ -586,7 +586,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose, config,
                       </div>
                       
                       <div className="bg-pink-50/30 p-4 rounded-2xl border border-pink-300/10 space-y-4">
-                        <h4 className="font-display text-pink-900 text-lg border-b border-pink-300/20 pb-2">General Wedding Settings</h4>
+                        <h4 className="font-display text-pink-900 text-lg border-b border-pink-300/20 pb-2">General Engagement Settings</h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div className="col-span-1 md:col-span-2">
                             <label className="text-[10px] text-pink-800/70 uppercase tracking-widest block mb-1">Hero Section Tagline</label>
@@ -676,7 +676,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ isOpen, onClose, config,
                               </div>
                               
                               <div className="mt-3 bg-pink-500/5 p-3 rounded-xl border border-pink-300/10 space-y-2">
-                                <span className="text-[10px] text-pink-800/80 font-bold uppercase tracking-widest block mb-1">Or Select a Ready-To-Use Premium Wedding Track:</span>
+                                <span className="text-[10px] text-pink-800/80 font-bold uppercase tracking-widest block mb-1">Or Select a Ready-To-Use Premium Track:</span>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                                   {[
                                     { name: "📯 Royal Shehnai", desc: "Auspicious & Celebratory", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" },

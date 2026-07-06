@@ -80,7 +80,7 @@ export const EnvelopeCover: React.FC<EnvelopeCoverProps> = ({
         )}
         <div className="relative z-10 flex flex-col items-center justify-end pb-16 md:pb-20">
           <p className="font-accent text-4xl md:text-5xl text-pink-800 mb-2 drop-shadow-sm font-medium">
-            Wedding Invitation
+            Engagement Invitation
           </p>
         </div>
       </motion.div>

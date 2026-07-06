@@ -81,8 +81,8 @@ export const weddingConfig: WeddingConfig = {
   },
   weddingDate: "2026-12-12T18:30:00", // Year-Month-Day-Time (for countdown)
   displayDate: "12th December 2026",
-  hashtag: "#AaravWedsAnanya",
-  heroTagline: "We Are Getting Married",
+  hashtag: "#AaravEngagesAnanya",
+  heroTagline: "We Are Getting Engaged",
   // A beautiful, soothing, royalty-free Indian bansuri/flute melody
   musicUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
   youtubeEmbedUrl: "https://www.youtube.com/embed/N4YdD_19F0Y", // Indian wedding highlight placeholder
@@ -104,14 +104,14 @@ export const weddingConfig: WeddingConfig = {
     },
     {
       url: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=800",
-      caption: "The Sacred Mandap"
+      caption: "A New Beginning"
     }
   ],
   events: [
     {
-      id: "mehendi",
-      name: "Mehendi Ceremony",
-      hindiName: "॥ मेहँदी रस्म ॥",
+      id: "roka",
+      name: "Roka Ceremony",
+      hindiName: "॥ रोका रस्म ॥",
       date: "Thursday, 10th December 2026",
       time: "11:00 AM onwards",
       venueName: "The Royal Palms Estate, Lawn A",
@@ -122,22 +122,9 @@ export const weddingConfig: WeddingConfig = {
       accentColor: "from-emerald-800 to-green-950"
     },
     {
-      id: "haldi",
-      name: "Haldi Ceremony",
-      hindiName: "॥ हल्दी कुमकुम रस्म ॥",
-      date: "Friday, 11th December 2026",
-      time: "09:00 AM onwards",
-      venueName: "The Grand Courtyard, Sun Valley Hotel",
-      venueAddress: "Ring Road, Juhu Vista, Mumbai, MH - 400049",
-      mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.1989045763073!2d72.825621!3d19.110294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c99277d33d9f%3A0x6fb878ea2ec6c41b!2sJuhu%20Beach!5e0!3m2!1sen!2sin!4v1680000000001!5m2!1sen!2sin",
-      mapDirectionsUrl: "https://maps.google.com/?q=Juhu+Beach+Mumbai",
-      imageUrl: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800",
-      accentColor: "from-amber-600 to-yellow-900"
-    },
-    {
-      id: "sangeet",
-      name: "Sangeet & Shahi Sangeet",
-      hindiName: "॥ संगीत संध्या ॥",
+      id: "engagement",
+      name: "Ring Ceremony",
+      hindiName: "॥ सगाई एवं अंगूठी रस्म ॥",
       date: "Friday, 11th December 2026",
       time: "07:00 PM onwards",
       venueName: "The Golden Leaf Ballroom, Sun Valley Hotel",
@@ -148,30 +135,17 @@ export const weddingConfig: WeddingConfig = {
       accentColor: "from-indigo-800 to-purple-950"
     },
     {
-      id: "wedding",
-      name: "Wedding Ceremony",
-      hindiName: "॥ शुभ विवाह ॥",
+      id: "dinner",
+      name: "Engagement Dinner",
+      hindiName: "॥ सगाई भोज ॥",
       date: "Saturday, 12th December 2026",
-      time: "06:30 PM (Varmala) | 11:30 PM (Phere)",
+      time: "08:00 PM onwards",
       venueName: "The Imperial Mandapam, Raj Palace Palace Resort",
       venueAddress: "VIP Road, Bandra Reclamation, Mumbai, MH - 400050",
       mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.1802958410297!2d72.8203588!3d19.0558094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c913db23bded%3A0x8e82110c7104b2a!2sBandra%20Reclamation!5e0!3m2!1sen!2sin!4v1680000000002!5m2!1sen!2sin",
       mapDirectionsUrl: "https://maps.google.com/?q=Bandra+Reclamation+Mumbai",
       imageUrl: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=800",
       accentColor: "from-royal-red-800 to-royal-red-950"
-    },
-    {
-      id: "reception",
-      name: "Grand Reception",
-      hindiName: "॥ प्रीति भोज ॥",
-      date: "Sunday, 13th December 2026",
-      time: "07:30 PM onwards",
-      venueName: "The Sapphire Crystal Hall, Raj Palace Palace Resort",
-      venueAddress: "VIP Road, Bandra Reclamation, Mumbai, MH - 400050",
-      mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.1802958410297!2d72.8203588!3d19.0558094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c913db23bded%3A0x8e82110c7104b2a!2sBandra%20Reclamation!5e0!3m2!1sen!2sin!4v1680000000002!5m2!1sen!2sin",
-      mapDirectionsUrl: "https://maps.google.com/?q=Bandra+Reclamation+Mumbai",
-      imageUrl: "https://images.unsplash.com/photo-1607190074257-dd4b7af0309f?auto=format&fit=crop&w=800",
-      accentColor: "from-cyan-900 to-slate-950"
     }
   ],
   socialLinks: {
@@ -179,7 +153,7 @@ export const weddingConfig: WeddingConfig = {
     instagram: "https://instagram.com"
   },
   familyDetails: {
-    message: "With the divine blessings of Lord Ganesha and our ancestors, we cordially invite you and your family to grace this auspicious occasion and bless the newlyweds.",
+    message: "With the divine blessings of Lord Ganesha and our ancestors, we cordially invite you and your family to grace this auspicious occasion and bless the newly engaged couple.",
     welcomingText: "Warmly Welcomed By:",
     names: [
       "Singhal Family",
@@ -190,6 +164,6 @@ export const weddingConfig: WeddingConfig = {
   welcomeMessage: {
     title: "Two Hearts, One Journey",
     subtitle: "We invite you to celebrate our love",
-    text: "Because you have played a very special role in our lives, we would love for you to join us as we embark on this beautiful adventure of marriage. Together with our families, we invite you to share our joy, laughter, and sacred vows."
+    text: "Because you have played a very special role in our lives, we would love for you to join us as we embark on this beautiful adventure together. Along with our families, we invite you to share our joy and laughter on our engagement day."
   }
 };
